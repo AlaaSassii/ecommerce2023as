@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { Products } from "../types/Products";
+import { Products } from "../types/products";
 import axios from "axios";
 
 type initialStateType = {
