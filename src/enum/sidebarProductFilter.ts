@@ -1,4 +1,4 @@
-export enum cartFilterEnum {
+export enum sidebarProductsFilterEnum {
     hidden,
     open
 }
