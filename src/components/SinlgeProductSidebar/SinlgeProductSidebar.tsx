@@ -13,7 +13,7 @@ type productSlidePropsType = {
     amount: number,
     id: number
 }
-const ProductSlide: FC<productSlidePropsType> = ({ id, image, title, amount }) => {
+const SinlgeProductSidebar: FC<productSlidePropsType> = ({ id, image, title, amount }) => {
     const { decrementAmout, deleteProduct, incrementAmout } = useProductActions()
 
     return (
@@ -34,4 +34,4 @@ const ProductSlide: FC<productSlidePropsType> = ({ id, image, title, amount }) =
     )
 }
 
-export default ProductSlide
+export default SinlgeProductSidebar
