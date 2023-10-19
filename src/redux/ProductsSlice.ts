@@ -3,7 +3,7 @@ import { Products } from "../types/products";
 import axios from "axios";
 
 type initialStateType = {
-    products: any | Products,
+    products: undefined | Products,
     loading: boolean,
     error: string,
 }

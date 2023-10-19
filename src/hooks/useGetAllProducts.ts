@@ -7,7 +7,7 @@ const useGetAllProducts = () => {
     const { loading, error, products } = useAppSelector(state => state.products)
 
     useEffect(() => {
-        if (products?.length > 0 || products === undefined) {
+        if (products === undefined) {
             dispatch(getAllProducts())
         }
     }, [])
