@@ -17,7 +17,6 @@ const UserProductCard: FC<productUserCart> = ({ amount, description, id, image, 
                 <p><b>Product Title:</b>{title}</p>
                 <p><b>Product Description:</b>{description}</p>
                 <p><b>Product Price:</b>{price}$</p>
-
                 <div><b>Starts:</b> <Stars fontSize='medium' rate={rating.rate} /></div>
                 <div className='product__amount'>
                     <button onClick={() => decrementAmout(id)}><RiSubtractFill /></button>
