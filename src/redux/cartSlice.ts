@@ -2,14 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { productsUserCart } from "../types/productsUserCart";
 import { singleProduct } from "../types/singleProduct";
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { carSliceEnum } from "../enum/cartSlice";
 
 type stateType = {
     userCartProduct: productsUserCart,
-
+    sidebarCartProductShow: carSliceEnum
 }
 
 const initialState: stateType = {
     userCartProduct: [],
+    sidebarCartProductShow: carSliceEnum.hidden
 }
 
 const cartSlice = createSlice({
