@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import ProductsReducer from './ProductsSlice';
 import CartReducer from './cartSlice';
 import ProductFilterReducer from './ProducFilterSlice'
+import SidebarsReducer from './sidebarsSlice'
 const store = configureStore({
     reducer: {
         products: ProductsReducer,
         userCart: CartReducer,
-        ProductFilter: ProductFilterReducer
+        ProductFilter: ProductFilterReducer,
+        sidebars: SidebarsReducer
 
     },
 });
