@@ -27,6 +27,7 @@ const ProductsCategories: FC<productsCategoriesType> = ({ category }) => {
                             rate={p.rating.rate}
                             product={p}
                             rateCount={p.rating.count}
+                            key={`category__${i}`}
 
                         />)
                 // 
