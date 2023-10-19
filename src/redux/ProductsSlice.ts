@@ -37,7 +37,7 @@ const productsSlice = createSlice({
         changeSearchProductName: (state, action: PayloadAction<string>) => {
             const name = action.payload
             return { ...state, searchProductName: name }
-        }
+        },
     },
     extraReducers: (builder) => {
         builder
