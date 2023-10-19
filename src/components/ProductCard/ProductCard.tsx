@@ -30,9 +30,12 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
                 <p><b>Price</b>{price}$</p>
                 <Stars fontSize='small' rate={rate} />
                 <p><b>Category:</b> {category} </p>
-                <button onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
-                    {productInCart ? "Remove from Cart" : "Add to Cart"}
-                </button>
+                <div className="buttons">
+                    <button onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
+                        {productInCart ? "Remove from Cart" : "Add to Cart"}
+                    </button>
+                    <button onClick={() => console.log(id)}>View More</button>
+                </div>
             </div>
             <div className="rates">
                 <div className='icon'><AiFillHeart /></div>

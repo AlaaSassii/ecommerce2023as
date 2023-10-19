@@ -24,6 +24,7 @@ const UserProductCard: FC<productUserCart> = ({ amount, description, id, image, 
                     <div>{amount}</div>
                     <button onClick={() => incrementAmout(id)}><FiPlus /></button>
                 </div>
+                <button onClick={() => console.log(id)}>View More</button>
             </div>
         </div>
     )
