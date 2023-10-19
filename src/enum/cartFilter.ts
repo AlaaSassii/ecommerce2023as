@@ -1,4 +1,4 @@
-export enum cartFilter {
+export enum cartFilterEnum {
     hidden,
     open
 }

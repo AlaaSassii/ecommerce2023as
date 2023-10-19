@@ -4,7 +4,8 @@ import { singleProduct } from "../types/singleProduct";
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 type stateType = {
-    userCartProduct: productsUserCart
+    userCartProduct: productsUserCart,
+
 }
 
 const initialState: stateType = {

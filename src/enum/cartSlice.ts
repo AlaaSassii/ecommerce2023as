@@ -1,4 +1,4 @@
-export enum carSlice {
+export enum carSliceEnum {
     hidden,
     open
 }

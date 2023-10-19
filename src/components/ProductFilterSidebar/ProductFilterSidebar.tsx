@@ -9,6 +9,9 @@ const ProductFilterSidebar = () => {
                 <h1 className="title"></h1>
                 <p></p>
             </div>
+            <div>
+
+            </div>
         </div>
     )
 }
