@@ -8,4 +8,7 @@ export type Product = {
     title: string;
 };
 
-export type Products = Product[];
+export type productUserCart = Product & { amount: number }
+
+export type productsUserCart = productUserCart[]
+
