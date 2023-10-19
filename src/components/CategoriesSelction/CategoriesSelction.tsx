@@ -1,8 +1,15 @@
-import React from 'react'
+import { FC } from 'react'
 import './CategoriesSelction.scss'
-const CategoriesSelction = () => {
+type categoriesSelctionPropsType = {
+    categories: string[]
+}
+const CategoriesSelction: FC<categoriesSelctionPropsType> = ({ categories }) => {
     return (
-        <div>CategoriesSelction</div>
+        <div className='categories__selection__container'>
+            {
+                categories.map((categorie) => <button key={categorie}>{categories}</button>)
+            }
+        </div>
     )
 }
 
