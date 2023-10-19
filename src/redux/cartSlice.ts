@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from '@reduxjs/toolkit'
 import { productsUserCart } from "../types/productsUserCart";
 import { singleProduct } from "../types/singleProduct";
+import type { PayloadAction } from '@reduxjs/toolkit'
 
 type stateType = {
     userCartProduct: productsUserCart
