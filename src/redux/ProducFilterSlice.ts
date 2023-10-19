@@ -13,7 +13,6 @@ const initialState: initialStateType = {
     rateFilter: null,
     categoryFilter: [],
     priceFilter: { min: 0, max: 100 }
-
 }
 
 const productFilterSlice = createSlice({
@@ -37,5 +36,9 @@ const productFilterSlice = createSlice({
         },
         priceMaxFilter: (state, action: PayloadAction<number>) => {
             return { ...state, priceFilter: { ...state.priceFilter, max: action.payload } }
-        }
-    })
+        },
+    }
+})
+
+export default productFilterSlice.reducer;
+export const { changeNameFilter, changeRateFilter, addCategoryFilter, removeCategoryFilter, priceMinFilter, priceMaxFilter } = productFilterSlice.actions
