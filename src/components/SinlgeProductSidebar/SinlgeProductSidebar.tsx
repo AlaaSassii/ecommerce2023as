@@ -7,13 +7,13 @@ import { RiSubtractFill } from 'react-icons/ri'
 import { AiOutlineClose } from 'react-icons/ai'
 import './ProductSlide.scss'
 
-type productSlidePropsType = {
+type SinlgeProductSidebarType = {
     image: string,
     title: string,
     amount: number,
     id: number
 }
-const SinlgeProductSidebar: FC<productSlidePropsType> = ({ id, image, title, amount }) => {
+const SinlgeProductSidebar: FC<SinlgeProductSidebarType> = ({ id, image, title, amount }) => {
     const { decrementAmout, deleteProduct, incrementAmout } = useProductActions()
 
     return (

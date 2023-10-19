@@ -1,0 +1,1 @@
+export const roundToNearestWhole = (num: number): number => { return Math.round(num); };
