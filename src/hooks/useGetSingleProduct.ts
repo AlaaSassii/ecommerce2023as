@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios, { AxiosResponse, AxiosError } from 'axios'
-import { Product } from '../types/singleProduct';
+import { singleProduct } from '../types/singleProduct';
 const useGetSingleProduct = (id: string) => {
-    const [product, setProduct] = useState<Product | undefined>(undefined);
+    const [product, setProduct] = useState<singleProduct | undefined>(undefined);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
