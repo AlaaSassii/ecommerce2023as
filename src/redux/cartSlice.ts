@@ -20,7 +20,7 @@ const cartSlice = createSlice({
             const product = action.payload
             if (state.userCartProduct.find(p => p.id === product.id)) return state
             return {
-                ...state, userCartProduct: [...state.userCartProduct, { ...product, amount: 0 }]
+                ...state, userCartProduct: [...state.userCartProduct, { ...product, amount: 1 }]
             }
         },
         removeProduct: (state, action: PayloadAction<number>) => {
@@ -29,7 +29,7 @@ const cartSlice = createSlice({
                 ...state, userCartProduct: state.userCartProduct.filter(v => v.id !== id)
             }
         },
-        addProductAmount: (state, action: PayloadAction<number>) => {
+        incrementProductAmount: (state, action: PayloadAction<number>) => {
             const id = action.payload
             return {
                 ...state, userCartProduct: state.userCartProduct.map(p => {
@@ -38,7 +38,7 @@ const cartSlice = createSlice({
                 })
             }
         },
-        removeProductAmount: (state, action: PayloadAction<number>) => {
+        decrementProductAmount: (state, action: PayloadAction<number>) => {
             const id = action.payload
             const product = state.userCartProduct.find(v => v.id === id);
             if (product?.amount as number > 1) return {
@@ -49,10 +49,7 @@ const cartSlice = createSlice({
             }
             else {
                 return {
-                    ...state, userCartProduct: state.userCartProduct.map(p => {
-                        if (p.id !== id) return p
-                        return { ...p, amount: p.amount + 1 }
-                    })
+                    ...state, userCartProduct: state.userCartProduct.filter(v => v.id !== id)
                 }
             }
         },
@@ -61,4 +58,4 @@ const cartSlice = createSlice({
 )
 
 export default cartSlice.reducer
-export const { getNewProduct, removeProduct, addProductAmount, removeProductAmount } = cartSlice.actions
+export const { getNewProduct, removeProduct, incrementProductAmount, decrementProductAmount } = cartSlice.actions
