@@ -7,7 +7,7 @@ export const useProductFilter = () => {
     const { nameFilter, categoryFilter, priceFilter, rateFilter } = useAppSelector(state => state.ProductFilter)
 
     const changeNameFilterFunction = (name: string) => {
-        dispatch(changeNameFilter)
+        dispatch(changeNameFilter(name))
     }
 
     const addCategoryFilterFunction = (category: string) => {
