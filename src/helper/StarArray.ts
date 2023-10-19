@@ -1,6 +1,7 @@
-export const generateArray = (input: number): string[] => {
+export const generateStarArray = (input: number): string[] => {
     const result: string[] = [];
-    let remainingFraction = input - Math.floor(input);
+    const roundNumber = Math.round(input)
+    let remainingFraction = roundNumber - Math.floor(roundNumber);
 
     for (let i = 0; i < 5; i++) {
         if (i === 0) {
