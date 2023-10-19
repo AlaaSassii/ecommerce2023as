@@ -1,12 +1,21 @@
 import { FC } from 'react'
 import './UserProduct.scss'
-import { productUserCart } from '../../types/productsUserCart'
 import { FiPlus } from 'react-icons/fi';
 import { RiSubtractFill } from 'react-icons/ri'
 import Stars from '../Stars'
 import { useProductActions } from '../../hooks/useProductActions';
 
-const UserProductCard: FC<productUserCart> = ({ amount, description, id, image, price, rating, title }) => {
+type UserProductCardType = {
+    amount: number,
+    description: string,
+    image: string,
+    price: number,
+    rate: number,
+    title: string,
+    id: number
+}
+
+const UserProductCard: FC<UserProductCardType> = ({ amount, id, image, price, rate, title }) => {
     const { decrementAmout, incrementAmout } = useProductActions()
     return (
         <div className='user__product__card'>
@@ -15,9 +24,8 @@ const UserProductCard: FC<productUserCart> = ({ amount, description, id, image, 
             </div>
             <div className='info'>
                 <p><b>Product Title:</b>{title}</p>
-                <p><b>Product Description:</b>{description}</p>
                 <p><b>Product Price:</b>{price}$</p>
-                <div><b>Starts:</b> <Stars fontSize='medium' rate={rating.rate} /></div>
+                <div><b>Starts:</b> <Stars fontSize='medium' rate={rate} /></div>
                 <div className='product__amount'>
                     <button onClick={() => decrementAmout(id)}><RiSubtractFill /></button>
                     <div>{amount}</div>
