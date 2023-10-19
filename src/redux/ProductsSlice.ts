@@ -58,3 +58,4 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer;
+export const { changeSearchProductName } = productsSlice.actions
