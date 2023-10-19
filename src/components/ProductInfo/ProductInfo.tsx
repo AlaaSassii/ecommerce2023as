@@ -7,6 +7,7 @@ type PrpductInfoProps = {
     rate: number,
     title: string,
     description: string,
+    category: string,
     id: number
 }
 const ProductInfo: FC<PrpductInfoProps> = ({ id, description, image, price, rate, title }) => {
@@ -19,7 +20,6 @@ const ProductInfo: FC<PrpductInfoProps> = ({ id, description, image, price, rate
                 <p><b>Product Title:</b>{title}</p>
                 <p><b>Product Price:</b>{price}$</p>
                 <p><b>Product Description:</b>{description}</p>
-
                 <div><b>Starts:</b> <Stars fontSize='large' rate={rate} /></div>
             </div>
         </div>
