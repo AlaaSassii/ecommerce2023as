@@ -1,8 +1,26 @@
-import React from 'react'
+import { FC } from 'react'
 import './ProductsCategories.scss'
-const ProductsCategories = () => {
+import { useGetProductsByCategory } from '../../hooks/useGetProdcutsByCategory'
+type productsCategoriesType = {
+    category: string
+}
+const ProductsCategories: FC<productsCategoriesType> = ({ category }) => {
+    const { products, error, loading } = useGetProductsByCategory(category)
     return (
-        <div>ProductsCategories</div>
+        <div className='products__categories'>
+            {
+                error
+                    ?
+                    <p>{error}</p>
+                    :
+                    (loading || products.length === 0)
+                        ?
+                        <h1>loading</h1>
+                        :
+                        null
+                // products.map((p, i) => )
+            }
+        </div>
     )
 }
 
