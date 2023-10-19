@@ -1,14 +1,6 @@
-export type Product = {
-    category: string;
-    description: string;
-    id: number;
-    image: string;
-    price: number;
-    rating: { rate: number; count: number };
-    title: string;
-};
+import { singleProduct } from "./singleProduct"
 
-export type productUserCart = Product & { amount: number }
+export type productUserCart = singleProduct & { amount: number }
 
 export type productsUserCart = productUserCart[]
 
