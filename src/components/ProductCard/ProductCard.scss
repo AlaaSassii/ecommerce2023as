@@ -9,11 +9,14 @@
     font-size: small;
     display: block;
     margin: auto;
+    max-height:500px;
+    
     &:hover{
         .rates{
             opacity: 1;
         }
     } 
+    
     .image{
         width: 100%;
         height: 250px;
@@ -26,10 +29,17 @@
 
     .product__info{
         padding: 24px;
-        font-size: x-small;
+        font-size: small;
         h2{
             font-size: small;
         }
+        p{
+            font-size: x-small;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        
     }
     .rates{
         opacity: 0;
@@ -51,6 +61,10 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
+            border: solid 1px #ececec;
+            svg{
+                color: var(--red-color);
+            }
             .data{
                 transform: translate(-2px,-2px);
             }
