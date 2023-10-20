@@ -3,7 +3,7 @@ import Stars from '../Stars'
 import { useProductActions } from '../../hooks/useProductActions'
 import { useAppSelector } from '../../hooks/useAppSelector'
 import { singleProduct } from '../../types/singleProduct'
-
+import './ProductInfo.scss'
 type PrpductInfoProps = {
     image: string,
     price: number,
@@ -27,7 +27,7 @@ const ProductInfo: FC<PrpductInfoProps> = ({ id, description, image, price, rate
                 <p><b>Product Title:</b>{title}</p>
                 <p><b>Product Description:</b>{description}</p>
                 <p><b>Product Price:</b>{price}$</p>
-                <div><b>Starts:</b> <Stars fontSize='large' rate={rate} /></div>
+                <p><b>Starts:</b> <Stars fontSize='large' rate={rate} /></p>
                 <button className='add_to_cart__btn' onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
                     {productInCart ? "Remove from Cart" : "Add to Cart"}
                 </button>

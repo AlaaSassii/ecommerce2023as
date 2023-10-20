@@ -5,9 +5,13 @@ import { Container } from '@mui/material';
 import ErrorNoProduct from '../components/ErrorNoProduct';
 import ProductsCategories from '../components/ProductsCategories';
 import '../scss/ProductsInfo.scss'
+import { useEffect } from 'react'
 const ProductsInfo = () => {
     const { id } = useParams();
-    const { product, error, loading } = useGetSingleProduct(id || '')
+    const { product, error, loading } = useGetSingleProduct(id || '');
+    useEffect(() => {
+        console.log(id)
+    }, [id])
     return (
         <Container>
             {
@@ -23,7 +27,7 @@ const ProductsInfo = () => {
                             <ProductInfo
                                 product={product}
                                 category={product.category}
-                                description={product.category}
+                                description={product.description}
                                 id={product.id}
                                 image={product.image}
                                 price={product.price}

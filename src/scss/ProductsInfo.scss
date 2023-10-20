@@ -10,8 +10,31 @@
         font-size: medium;
         display: flex;
         align-items: flex-start;
+        height: auto;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         img{
             width: 300px;
+        }
+        font-size: medium;
+        .info{
+            p{
+                padding: 10px ;
+            }
+            button{
+                margin: 10px;
+                cursor: pointer;
+                font-size: small;
+                border-radius: 4px;
+                width: fit-content;
+                padding: 5px;
+                border: none;
+                outline: transparent;
+                color: white;
+                transition: 0.3s;
+                background-color: var(--red-color);
+                margin-right: 5px;
+            
+            }
         }
     }
 }

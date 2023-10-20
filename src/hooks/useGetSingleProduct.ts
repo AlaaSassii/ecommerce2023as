@@ -5,8 +5,7 @@ const useGetSingleProduct = (id: string) => {
     const [product, setProduct] = useState<singleProduct | undefined>(undefined);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-
-    useEffect(() => {
+    const getProductInfo = (id: string) => {
         setLoading(true)
         axios(`https://fakestoreapi.com/products/${id}`)
             .then((response: AxiosResponse) => {
@@ -17,6 +16,9 @@ const useGetSingleProduct = (id: string) => {
                 setLoading(false);
                 setError(error.message);
             })
+    }
+    useEffect(() => {
+        getProductInfo(id)
     }, []);
 
     return { product, error, loading };
