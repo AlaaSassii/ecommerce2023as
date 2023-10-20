@@ -6,6 +6,7 @@ import UserCart from './routes/UserCart'
 import Contact from './routes/Contact'
 import Error from './routes/Error'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 const App = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='*' element={<Error />} />
       </Routes>
+      <Footer />
     </>
   )
 }
