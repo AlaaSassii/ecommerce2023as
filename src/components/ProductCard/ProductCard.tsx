@@ -1,5 +1,7 @@
 import { FC } from 'react'
+
 import Stars from '../Stars'
+import { useNavigate } from 'react-router-dom'
 import { AiFillHeart } from 'react-icons/ai'
 import { useAppSelector } from '../../hooks/useAppSelector'
 import { useProductActions } from '../../hooks/useProductActions'
@@ -20,9 +22,9 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
     const { userCartProduct } = useAppSelector(state => state.userCart)
     const { deleteProduct, getProduct } = useProductActions()
     const productInCart = userCartProduct.find(product => product.id === id)
-
+    const navigate = useNavigate()
     return (
-        <div className='product__cart'>
+        <div className='product__card'>
             <div className="image">
                 <img src={image} alt={title} />
             </div>
@@ -35,12 +37,14 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
                     <button onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
                         {productInCart ? "Remove from Cart" : "Add to Cart"}
                     </button>
-                    <button onClick={() => console.log(id)}>View More</button>
+                    <button onClick={() => navigate(`/products/${id}`)}>View More</button>
                 </div>
             </div>
             <div className="rates">
-                <div className='icon'><AiFillHeart /></div>
-                <div className='data'>{rateCount}</div>
+                <div className='rates__container'>
+                    <div className='icon'><AiFillHeart /></div>
+                    <div className='data'>{rateCount}</div>
+                </div>
             </div>
         </div>
     )

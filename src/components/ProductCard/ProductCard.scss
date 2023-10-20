@@ -1,0 +1,53 @@
+.product__card{
+    position: relative;
+    width: 250px;
+    background-color: red;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-size: small;
+    &:hover{
+        .rates{
+            opacity: 1;
+        }
+    } 
+    .image{
+        width: 100%;
+        height: 250px;
+
+        >img{
+            width: 100%;
+            height: 250px;
+        }
+    }
+
+    .product__info{
+        padding: 24px;
+    }
+    .rates{
+        opacity: 0;
+        transition: .3s;
+        position: absolute;
+        top:0;
+        right:10px;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: x-small;
+        .rates__container{
+            padding: 10px 13px;
+            background-color: blue;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            .data{
+                transform: translate(-2px,-2px);
+            }
+        }
+    }
+}
