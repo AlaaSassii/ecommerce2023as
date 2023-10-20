@@ -13,9 +13,9 @@ const Stars: FC<StarsPropsType> = ({ rate, fontSize }) => {
             {
                 generateStarArray(rate)
                     .map((star, index) => {
-                        if (star === 'S') return <TbStarFilled style={{ fontSize }} key={`star__${index}`} className="star__true" />
                         if (star === 'H') return <TbStarHalfFilled style={{ fontSize }} key={`star__${index}`} className="star__true" />
                         if (star === 'E') return <TbStarFilled style={{ fontSize }} key={`star__${index}`} className="star__false" />
+                        if (star === 'S') return <TbStarFilled style={{ fontSize }} key={`star__${index}`} className="star__true" />
                     })
             }
         </div>

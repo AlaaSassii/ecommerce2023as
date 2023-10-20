@@ -1,23 +1,15 @@
-export const generateStarArray = (input: number): string[] => {
-    const result: string[] = [];
-    const roundNumber = Math.round(input)
-    let remainingFraction = roundNumber - Math.floor(roundNumber);
+export function generateStarArray(rating: number): string[] {
+    const starArray: string[] = [];
 
-    for (let i = 0; i < 5; i++) {
-        if (i === 0) {
-            if (remainingFraction >= 0.5) {
-                result.push("H");
-                remainingFraction -= 0.5;
-            } else {
-                result.push("E");
-            }
-        } else if (remainingFraction >= 0.5) {
-            result.push("H");
-            remainingFraction -= 0.5;
+    for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+            starArray.push("S"); // Full star
+        } else if (i - rating < 0.5) {
+            starArray.push("H"); // Half star
         } else {
-            result.push("E");
+            starArray.push("E"); // Empty star
         }
     }
 
-    return result;
+    return starArray;
 }

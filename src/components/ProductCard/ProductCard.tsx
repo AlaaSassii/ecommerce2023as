@@ -30,7 +30,7 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
             </div>
             <div className="product__info">
                 <h4 className="product__title"></h4>
-                <p><b>Price</b>{price}$</p>
+                <p><b>Price:</b>{price}$</p>
                 <Stars fontSize='small' rate={rate} />
                 <p><b>Category:</b> {category} </p>
                 <div className="buttons">
