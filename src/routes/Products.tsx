@@ -8,17 +8,18 @@ const Products = ({ }) => {
     return (
         <>
             <Container>
-                {
-                    error
-                        ?
-                        <h1>{error}</h1>
-                        :
-                        (loading || !products)
+                <div className="products__contaienr">
+
+                    {
+                        error
                             ?
-                            <h1>Loading...</h1>
+                            <h1>{error}</h1>
                             :
-                            <div className="products__contaienr">
-                                {products.map((p) =>
+                            (loading || !products)
+                                ?
+                                <h1>Loading...</h1>
+                                :
+                                products.map((p) =>
                                     <ProductCard
                                         category={p.category}
                                         id={p.id}
@@ -29,10 +30,10 @@ const Products = ({ }) => {
                                         rateCount={p.rating.count}
                                         title={p.title}
                                         key={`product__${p.id}`}
-                                    />)}
-                            </div>
+                                    />)
 
-                }
+                    }
+                </div>
             </Container>
             <ProductFilterSidebar />
         </>

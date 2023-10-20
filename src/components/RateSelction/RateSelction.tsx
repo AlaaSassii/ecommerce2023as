@@ -1,8 +1,8 @@
 import { Rating } from '@mui/material'
-
+import { useProductFilter } from '../../hooks/useProductFilter'
 import './RateSelction.scss'
 const RateSelction = () => {
-
+    const { changeRateFilterFunction } = useProductFilter();
     return (
         <div className='rate__selction'>
             <Rating
@@ -10,7 +10,7 @@ const RateSelction = () => {
                 defaultValue={2.5}
                 precision={0.5}
                 onChange={(event, newValue) => {
-                    console.log(newValue);
+                    changeRateFilterFunction(newValue || 0);
                 }}
             />
         </div>
