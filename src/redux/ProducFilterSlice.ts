@@ -11,7 +11,7 @@ const initialState: initialStateType = {
     nameFilter: '',
     rateFilter: null,
     categoryFilter: ["men's clothing", "jewelery", "electronics", "women's clothing"],
-    priceFilter: { min: 0, max: 100 },
+    priceFilter: { min: 0, max: 700 },
 }
 
 const productFilterSlice = createSlice({

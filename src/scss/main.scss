@@ -1,3 +1,4 @@
+@import '_variables.scss';
 *{
     padding: 0;
     margin: 0;
@@ -20,4 +21,11 @@ body{
   @media (min-width: 1200px) {
     font-size: 22px;
   }
+}
+
+:root{
+  --main-color:#7300ff;
+  --main-black:#120028;
+  --dark-purpole:#4d00aa;
+  --gray-color:#dadada;
 }
