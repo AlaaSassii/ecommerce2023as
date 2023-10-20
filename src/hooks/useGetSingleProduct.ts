@@ -21,7 +21,7 @@ const useGetSingleProduct = (id: string) => {
         getProductInfo(id)
     }, []);
 
-    return { product, error, loading };
+    return { product, error, loading, getProductInfo };
 }
 
 export default useGetSingleProduct

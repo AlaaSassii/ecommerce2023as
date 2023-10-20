@@ -8,9 +8,9 @@ import '../scss/ProductsInfo.scss'
 import { useEffect } from 'react'
 const ProductsInfo = () => {
     const { id } = useParams();
-    const { product, error, loading } = useGetSingleProduct(id || '');
+    const { product, error, loading, getProductInfo } = useGetSingleProduct(id || '');
     useEffect(() => {
-        console.log(id)
+        getProductInfo(id || "")
     }, [id])
     return (
         <Container>

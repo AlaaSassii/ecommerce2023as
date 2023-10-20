@@ -3,6 +3,7 @@
     align-items: flex-start;
     gap: 10px;
     >.product__info{
+
         flex: 1;
         padding: 40px 20px;
         border: solid 1px var(--gray-color);
@@ -35,6 +36,13 @@
                 margin-right: 5px;
             
             }
+        }
+    }
+    .products__categories{
+        h1{
+            font-size: medium;
+            text-align: center;
+            padding-bottom: 20px;
         }
     }
 }

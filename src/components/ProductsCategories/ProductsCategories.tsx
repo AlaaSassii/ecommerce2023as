@@ -19,21 +19,27 @@ const ProductsCategories: FC<productsCategoriesType> = ({ category, id }) => {
                         ?
                         <h1>loading</h1>
                         :
-                        products
-                            .filter(p => p.id !== id)
-                            .slice(0, 2)
-                            .map((p, i) => <ProductCard
-                                category={p.category}
-                                id={p.id}
-                                image={p.image}
-                                price={p.price}
-                                title={p.title}
-                                rate={p.rating.rate}
-                                product={p}
-                                rateCount={p.rating.count}
-                                key={`category__${i}`}
+                        <div className='products__categories'>
+                            <h1>Other Products With The Same Category</h1>
 
-                            />)
+                            {
+                                products
+                                    .filter(p => p.id !== id)
+                                    .slice(0, 2)
+                                    .map((p, i) => <ProductCard
+                                        category={p.category}
+                                        id={p.id}
+                                        image={p.image}
+                                        price={p.price}
+                                        title={p.title}
+                                        rate={p.rating.rate}
+                                        product={p}
+                                        rateCount={p.rating.count}
+                                        key={`category__${i}`}
+
+                                    />)
+                            }
+                        </div>
                 // 
             }
         </div>
