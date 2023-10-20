@@ -3,9 +3,10 @@ import './ProductsCategories.scss'
 import { useGetProductsByCategory } from '../../hooks/useGetProdcutsByCategory'
 import ProductCard from '../ProductCard'
 type productsCategoriesType = {
-    category: string
+    category: string,
+    id: number
 }
-const ProductsCategories: FC<productsCategoriesType> = ({ category }) => {
+const ProductsCategories: FC<productsCategoriesType> = ({ category, id }) => {
     const { products, error, loading } = useGetProductsByCategory(category)
     return (
         <div className='products__categories'>
@@ -19,6 +20,7 @@ const ProductsCategories: FC<productsCategoriesType> = ({ category }) => {
                         <h1>loading</h1>
                         :
                         products
+                            .filter(p => p.id !== id)
                             .slice(0, 2)
                             .map((p, i) => <ProductCard
                                 category={p.category}

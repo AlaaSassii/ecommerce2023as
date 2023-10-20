@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import useGetSingleProduct from '../hooks/useGetSingleProduct';
 import { Container } from '@mui/material';
 import ErrorNoProduct from '../components/ErrorNoProduct';
+import ProductsCategories from '../components/ProductsCategories';
 
 const ProductsInfo = () => {
     const { id } = useParams();
@@ -30,7 +31,10 @@ const ProductsInfo = () => {
                                 rate={product.rating.rate}
                                 title={product.title}
                             />
-
+                            <ProductsCategories
+                                category={product.category}
+                                id={product.id}
+                            />
                         </div>
             }
         </Container>
