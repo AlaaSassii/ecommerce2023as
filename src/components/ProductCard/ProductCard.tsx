@@ -20,10 +20,10 @@ type productCardType = {
     product: singleProduct
 }
 const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateCount, category, product }) => {
+    const navigate = useNavigate()
     const { userCartProduct } = useAppSelector(state => state.userCart)
     const { deleteProduct, getProduct } = useProductActions()
     const productInCart = userCartProduct.find(product => product.id === id)
-    const navigate = useNavigate()
     return (
         <div className='product__card'>
             <div className="image">
