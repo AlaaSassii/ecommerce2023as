@@ -5,7 +5,7 @@ import { useProductActions } from '../../hooks/useProductActions';
 import { FiPlus } from 'react-icons/fi';
 import { RiSubtractFill } from 'react-icons/ri'
 import { AiOutlineClose } from 'react-icons/ai'
-import './ProductSlide.scss'
+import './SinlgeProductSidebar.scss'
 
 type SinlgeProductSidebarType = {
     image: string,

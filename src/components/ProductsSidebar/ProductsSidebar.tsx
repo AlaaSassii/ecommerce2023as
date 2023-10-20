@@ -1,4 +1,4 @@
-import './CartSlider.scss'
+import './ProductsSidebar.scss'
 import { useAppSelector } from '../../hooks/useAppSelector'
 import SinlgeProductSidebar from '../SinlgeProductSidebar'
 

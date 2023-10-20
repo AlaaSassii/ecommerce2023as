@@ -7,6 +7,7 @@ import Contact from './routes/Contact'
 import Error from './routes/Error'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ProductsSidebar from './components/ProductsSidebar'
 const App = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
+      <ProductsSidebar />
     </>
   )
 }
