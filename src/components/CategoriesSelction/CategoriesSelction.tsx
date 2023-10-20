@@ -5,13 +5,13 @@ type categoriesSelctionPropsType = {
     categories: string[]
 }
 const CategoriesSelction: FC<categoriesSelctionPropsType> = ({ categories }) => {
-    const { addCategoryFilterFunction } = useProductFilter()
+    const { addCategoryFilterFunction, removeCategoryFilterFunction, categoryFilter } = useProductFilter()
     return (
         <div className='categories__selection__container'>
             {
                 categories.map((c) =>
                     <button
-                        onClick={() => addCategoryFilterFunction(c)}>
+                        onClick={() => { categoryFilter.includes(c) ? removeCategoryFilterFunction(c) : addCategoryFilterFunction(c) }}>
                         {c}
                     </button>
                 )

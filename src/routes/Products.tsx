@@ -2,9 +2,16 @@ import Container from "../components/Container"
 import ProductCard from "../components/ProductCard"
 import ProductFilterSidebar from "../components/ProductFilterSidebar/ProductFilterSidebar"
 import useGetAllProducts from "../hooks/useGetAllProducts"
+import { useProductFilter } from "../hooks/useProductFilter"
 import '../scss/Products.scss'
 const Products = ({ }) => {
     const { products, loading, error, } = useGetAllProducts()
+    const { nameFilter, priceFilter, rateFilter, categoryFilter } = useProductFilter()
+    const filteredProducts = products
+        ?.filter(p => p.title.toLocaleLowerCase().includes(nameFilter.toLocaleLowerCase()))
+        ?.filter(p => p.price >= priceFilter.min && p.price <= priceFilter.max)
+        ?.filter(p => categoryFilter.includes(p.category))
+        ?.filter(p => p.rating.rate >= (rateFilter || 0))
     return (
         <>
             <Container>
@@ -15,22 +22,23 @@ const Products = ({ }) => {
                             ?
                             <h1>{error}</h1>
                             :
-                            (loading || !products)
+                            (loading || !filteredProducts)
                                 ?
                                 <h1>Loading...</h1>
                                 :
-                                products.map((p) =>
-                                    <ProductCard
-                                        category={p.category}
-                                        id={p.id}
-                                        image={p.image}
-                                        price={p.price}
-                                        product={p}
-                                        rate={p.rating.rate}
-                                        rateCount={p.rating.count}
-                                        title={p.title}
-                                        key={`product__${p.id}`}
-                                    />)
+                                filteredProducts
+                                    .map((p) =>
+                                        <ProductCard
+                                            category={p.category}
+                                            id={p.id}
+                                            image={p.image}
+                                            price={p.price}
+                                            product={p}
+                                            rate={p.rating.rate}
+                                            rateCount={p.rating.count}
+                                            title={p.title}
+                                            key={`product__${p.id}`}
+                                        />)
 
                     }
                 </div>

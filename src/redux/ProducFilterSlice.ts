@@ -10,7 +10,7 @@ type initialStateType = {
 const initialState: initialStateType = {
     nameFilter: '',
     rateFilter: null,
-    categoryFilter: [],
+    categoryFilter: ["men's clothing", "jewelery", "electronics", "women's clothing"],
     priceFilter: { min: 0, max: 100 },
 }
 
