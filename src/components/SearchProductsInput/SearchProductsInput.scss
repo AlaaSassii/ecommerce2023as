@@ -18,7 +18,9 @@
         outline: transparent;
         border: none;
         background-color: transparent;
-        @include flexCenter;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
         color: var(--text-color);
     }

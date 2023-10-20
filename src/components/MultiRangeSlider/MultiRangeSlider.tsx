@@ -1,74 +1,71 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import "./multiRangeSlider.css";
+import "./MultiRangeSlider.scss";
+import { useProductFilter } from "../../hooks/useProductFilter";
 
-interface MultiRangeSliderProps {
-    min: number;
-    max: number;
-    onChange: (values: { min: number; max: number }) => void;
-}
 
-const MultiRangeSlider: React.FC<MultiRangeSliderProps> = ({ min, max, onChange }) => {
-    const [minVal, setMinVal] = useState<number>(min);
-    const [maxVal, setMaxVal] = useState<number>(max);
+const MultiRangeSlider = () => {
+    const { priceFilter: { min, max }, changeMaximumPriceFunction, changeMinimumPriceFunction } = useProductFilter()
+    const [MAX, SETMAX] = useState(0);
+    const [MIN, SETMIN] = useState(0);
     const minValRef = useRef<number>(min);
     const maxValRef = useRef<number>(max);
     const range = useRef<HTMLDivElement | null>(null);
-
+    useEffect(() => {
+        SETMAX(max);
+        SETMIN(min)
+    }, [])
     const getPercent = useCallback(
         (value: number) => Math.round(((value - min) / (max - min)) * 100),
         [min, max]
     );
 
     const handleMinInputRangeSlider = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = Math.min(Number(event.target.value), maxVal - 1);
-        setMinVal(value);
+        const value = Math.min(Number(event.target.value), max - 1);
+        changeMinimumPriceFunction(value);
         minValRef.current = value;
     }
     const handleMaxInputRangeSlider = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = Math.max(Number(event.target.value), minVal + 1);
-        setMaxVal(value);
+        const value = Math.max(Number(event.target.value), min + 1);
+        changeMaximumPriceFunction(value);
         maxValRef.current = value;
     }
 
     useEffect(() => {
-        const minPercent = getPercent(minVal);
+        const minPercent = getPercent(min);
         const maxPercent = getPercent(maxValRef.current);
 
         if (range.current) {
             range.current.style.left = `${minPercent}%`;
             range.current.style.width = `${maxPercent - minPercent}%`;
         }
-    }, [minVal, getPercent]);
+    }, [min, getPercent]);
 
     useEffect(() => {
         const minPercent = getPercent(minValRef.current);
-        const maxPercent = getPercent(maxVal);
+        const maxPercent = getPercent(max);
 
         if (range.current) {
             range.current.style.width = `${maxPercent - minPercent}%`;
         }
-    }, [maxVal, getPercent]);
+    }, [max, getPercent]);
 
-    useEffect(() => {
-        onChange({ min: minVal, max: maxVal });
-    }, [minVal, maxVal, onChange]);
 
     return (
         <div className="multi__range__slider__container" >
             <input
                 type="range"
-                min={min}
-                max={max}
-                value={minVal}
+                min={MIN}
+                max={MAX}
+                value={min}
                 onChange={handleMinInputRangeSlider}
                 className="thumb thumb--left"
-                style={{ zIndex: minVal > max - 100 ? 5 : undefined }}
+                style={{ zIndex: min > MAX - 100 ? 5 : undefined }}
             />
             < input
                 type="range"
-                min={min}
-                max={max}
-                value={maxVal}
+                min={MIN}
+                max={MAX}
+                value={max}
                 onChange={handleMaxInputRangeSlider}
                 className="thumb thumb--right"
             />
@@ -76,8 +73,8 @@ const MultiRangeSlider: React.FC<MultiRangeSliderProps> = ({ min, max, onChange 
             <div className="slider">
                 <div className="slider__track" />
                 <div ref={range} className="slider__range" />
-                <div className="slider__left-value">{minVal}</div>
-                <div className="slider__right-value">{maxVal}</div>
+                <div className="slider__left-value">{min}</div>
+                <div className="slider__right-value">{max}</div>
             </div>
         </div>
     );

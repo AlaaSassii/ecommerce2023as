@@ -1,5 +1,6 @@
 import Container from "../components/Container"
 import ProductCard from "../components/ProductCard"
+import ProductFilterSidebar from "../components/ProductFilterSidebar/ProductFilterSidebar"
 import useGetAllProducts from "../hooks/useGetAllProducts"
 import '../scss/Products.scss'
 const Products = ({ }) => {
@@ -33,6 +34,7 @@ const Products = ({ }) => {
 
                 }
             </Container>
+            <ProductFilterSidebar />
         </>
 
     )

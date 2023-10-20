@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi';
-import './InputSearch.scss'
+import './SearchProductsInput.scss'
 type SearchProductsInputPropsType = {
     value: string,
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,

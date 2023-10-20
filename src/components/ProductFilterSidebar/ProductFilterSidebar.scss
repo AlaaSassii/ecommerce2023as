@@ -1,0 +1,27 @@
+.product__filter_Sidebar{
+    position: fixed;
+    top: 73px;
+    width: 340px;
+    left: 0;
+    height: calc(100vh - 73px);
+    background-color: white;
+    padding: 10px;
+    .sidebar__info{
+        h1{
+            padding: 0;
+            font-size: medium;
+        }
+        p{
+            
+            padding-top: 10px;
+            font-size: small;
+            color: #808080;
+            font-weight: thin;
+        }
+        
+    }    
+    .filters{
+        padding: 10px;
+        
+    }
+}
