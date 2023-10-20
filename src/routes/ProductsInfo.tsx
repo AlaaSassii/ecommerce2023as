@@ -19,7 +19,7 @@ const ProductsInfo = () => {
                         ?
                         <h1>Loading..</h1>
                         :
-                        <>
+                        <div>
                             <ProductInfo
                                 product={product}
                                 category={product.category}
@@ -30,7 +30,8 @@ const ProductsInfo = () => {
                                 rate={product.rating.rate}
                                 title={product.title}
                             />
-                        </>
+
+                        </div>
             }
         </Container>
         // <ProductInfo />

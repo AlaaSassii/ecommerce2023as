@@ -18,18 +18,20 @@ const ProductsCategories: FC<productsCategoriesType> = ({ category }) => {
                         ?
                         <h1>loading</h1>
                         :
-                        products.map((p, i) => <ProductCard
-                            category={p.category}
-                            id={p.id}
-                            image={p.image}
-                            price={p.price}
-                            title={p.title}
-                            rate={p.rating.rate}
-                            product={p}
-                            rateCount={p.rating.count}
-                            key={`category__${i}`}
+                        products
+                            .slice(0, 2)
+                            .map((p, i) => <ProductCard
+                                category={p.category}
+                                id={p.id}
+                                image={p.image}
+                                price={p.price}
+                                title={p.title}
+                                rate={p.rating.rate}
+                                product={p}
+                                rateCount={p.rating.count}
+                                key={`category__${i}`}
 
-                        />)
+                            />)
                 // 
             }
         </div>
