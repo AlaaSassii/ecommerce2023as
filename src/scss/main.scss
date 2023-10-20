@@ -24,8 +24,18 @@ body{
 }
 
 :root{
-  --main-color:#7300ff;
   --main-black:#120028;
-  --dark-purpole:#4d00aa;
   --gray-color:#dadada;
+  --main-color:#7300ff;
+  --main-color-hover:#4d00aa;
+  --green-color:#00ff73;
+  --blue-color:deepskyblue;
+  --yellow-color:gold;
+  --red-color:	#f40d30;  
+  --green-color-hover: #00cc66; /* Slightly darker green on hover */
+  --blue-color-hover: #0099cc; /* Slightly darker blue on hover */
+  --yellow-color-hover: #ccaa00; /* Slightly darker yellow on hover */
+  --red-color-hover: #cc0026; /* Slightly darker red on hover */
+
+
 }

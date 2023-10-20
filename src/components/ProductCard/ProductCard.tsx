@@ -37,10 +37,10 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
                 <Stars fontSize='small' rate={transformNumber(rate.toString())} />
                 <p><b>Category:</b> {category} </p>
                 <div className="buttons">
-                    <button onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
+                    <button className='add_to_cart__btn' onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
                         {productInCart ? "Remove from Cart" : "Add to Cart"}
                     </button>
-                    <button onClick={() => navigate(`/products/${id}`)}>View More</button>
+                    <button className='view__moew__btn' onClick={() => navigate(`/products/${id}`)}>View More</button>
                 </div>
             </div>
             <div className="rates">

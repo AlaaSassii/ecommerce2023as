@@ -47,7 +47,7 @@
         font-size: x-small;
         .rates__container{
             padding: 10px 13px;
-            background-color: blue;
+            background-color: white;
             width: 100%;
             height: 100%;
             border-radius: 50%;
@@ -55,5 +55,32 @@
                 transform: translate(-2px,-2px);
             }
         }
+    }
+    button{
+        cursor: pointer;
+        font-size: small;
+        border-radius: 4px;
+        width: fit-content;
+        padding: 5px;
+        border: none;
+        outline: transparent;
+        color: white;
+        transition: .3s;
+    }
+    .buttons{
+        margin-top: 10px;
+    }
+    .view__moew__btn{
+        background-color: var(--green-color);
+        &:hover{
+        background-color: var(--green-color-hover);
+        }
+    }
+    .add_to_cart__btn{
+        background-color: var(--red-color);
+        &:hover{
+            background-color: var(--red-color-hover);
+            }
+        margin-right: 5px;
     }
 }
