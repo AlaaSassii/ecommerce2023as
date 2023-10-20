@@ -23,6 +23,33 @@ body{
   }
 }
 
+/* Style the scrollbar track (background) */
+::-webkit-scrollbar {
+  width: 6px; /* Adjust the width to make the scrollbar thinner */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #ccc; /* Light gray color for the thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+/* Style the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+  background: #eee; /* Lighter gray track color on hover */
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa; /* Lighter gray thumb color on hover */
+}
+
+/* Style the scrollbar when it's in an active state (e.g., during scrolling) */
+::-webkit-scrollbar-thumb:active {
+  background: #999; /* Even lighter gray thumb color when actively scrolling */
+}
+
+
 :root{
   --main-black:#120028;
   --gray-color:#dadada;
