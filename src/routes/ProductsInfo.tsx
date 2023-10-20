@@ -1,11 +1,10 @@
-import React from 'react'
 import ProductInfo from '../components/ProductInfo/ProductInfo'
 import { useParams } from 'react-router-dom'
 import useGetSingleProduct from '../hooks/useGetSingleProduct';
 import { Container } from '@mui/material';
 import ErrorNoProduct from '../components/ErrorNoProduct';
 import ProductsCategories from '../components/ProductsCategories';
-
+import '../scss/ProductsInfo.scss'
 const ProductsInfo = () => {
     const { id } = useParams();
     const { product, error, loading } = useGetSingleProduct(id || '')
@@ -20,7 +19,7 @@ const ProductsInfo = () => {
                         ?
                         <h1>Loading..</h1>
                         :
-                        <div>
+                        <div className='productinfo__view'>
                             <ProductInfo
                                 product={product}
                                 category={product.category}

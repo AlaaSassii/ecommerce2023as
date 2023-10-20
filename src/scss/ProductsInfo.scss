@@ -1,0 +1,17 @@
+.productinfo__view{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    >.product__info{
+        flex: 1;
+        padding: 40px 20px;
+        border: solid 1px var(--gray-color);
+        border-radius: 4px;
+        font-size: medium;
+        display: flex;
+        align-items: flex-start;
+        img{
+            width: 300px;
+        }
+    }
+}
