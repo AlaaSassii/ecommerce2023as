@@ -1,7 +1,15 @@
+.multi__range__slider__container{
+  margin: 20px auto;
+  padding-left: 10px;
+}
+
+
 
   .slider {
     position: relative;
     width: 200px;
+
+    
   }
   
   .slider__track,
@@ -24,7 +32,7 @@
   }
   
   .slider__range {
-    background-color: #9fe5e1;
+    background-color: var(--main-color);
     z-index: 2;
   }
   

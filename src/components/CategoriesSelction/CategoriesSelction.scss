@@ -1,2 +1,26 @@
 .categories__selection__container{
+    margin-top:60px;
+    button{
+        border-radius: 4px;
+        outline: transparent;
+        border: none;
+        width: fit-content;
+        padding: 5px;
+        margin:5px;
+        cursor: pointer;
+        &.active{
+            background-color:var(--main-color);
+            color: white;
+            &:hover{
+                background-color:var(--gray-color);
+                color: var(--main-black);
+            }
+        }
+        &:hover{
+            background-color:var(--main-color);
+            color: white;
+
+        }
+        transition: .3s;
+    }
 }

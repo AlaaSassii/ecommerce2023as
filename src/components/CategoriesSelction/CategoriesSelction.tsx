@@ -6,12 +6,16 @@ type categoriesSelctionPropsType = {
 }
 const CategoriesSelction: FC<categoriesSelctionPropsType> = ({ categories }) => {
     const { addCategoryFilterFunction, removeCategoryFilterFunction, categoryFilter } = useProductFilter()
+    const handleClick = (c: string) => {
+        categoryFilter.includes(c) ? removeCategoryFilterFunction(c) : addCategoryFilterFunction(c)
+    }
     return (
         <div className='categories__selection__container'>
             {
                 categories.map((c) =>
                     <button
-                        onClick={() => { categoryFilter.includes(c) ? removeCategoryFilterFunction(c) : addCategoryFilterFunction(c) }}>
+                        className={categoryFilter.includes(c) ? 'active' : ''}
+                        onClick={() => { handleClick(c) }}>
                         {c}
                     </button>
                 )

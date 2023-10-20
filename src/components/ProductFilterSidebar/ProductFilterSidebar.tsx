@@ -17,7 +17,9 @@ const ProductFilterSidebar = () => {
                 <p><b>Customize Your Product View</b> sidebar lets you fine-tune your product search. Easily customize your results by selecting filters that match your preferences.</p>
             </div>
             <div className='filters'>
+                <p>Use the search bar to find products easily</p>
                 <SearchProductsInput handleChange={handleChange} value={nameFilter} />
+                <p>Utilize a multi-range slider for precise price filtering of products.</p>
                 <MultiRangeSlider />
                 <CategoriesSelction categories={["men's clothing", "jewelery", "electronics", "women's clothing"]} />
                 <RateSelction />
