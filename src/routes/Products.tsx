@@ -1,6 +1,7 @@
 import Container from "../components/Container"
 import ProductCard from "../components/ProductCard"
 import ProductFilterSidebar from "../components/ProductFilterSidebar/ProductFilterSidebar"
+import { transformNumber } from "../helper/transformNumber"
 import useGetAllProducts from "../hooks/useGetAllProducts"
 import { useProductFilter } from "../hooks/useProductFilter"
 import '../scss/Products.scss'
@@ -11,7 +12,7 @@ const Products = ({ }) => {
         ?.filter(p => p.title.toLocaleLowerCase().includes(nameFilter.toLocaleLowerCase()))
         ?.filter(p => p.price >= priceFilter.min && p.price <= priceFilter.max)
         ?.filter(p => categoryFilter.includes(p.category))
-        ?.filter(p => p.rating.rate >= (rateFilter || 0))
+        ?.filter(p => transformNumber(p.rating.rate.toString()) >= (rateFilter || 0))
     return (
         <>
             <Container>

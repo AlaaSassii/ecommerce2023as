@@ -7,6 +7,7 @@ import { useAppSelector } from '../../hooks/useAppSelector'
 import { useProductActions } from '../../hooks/useProductActions'
 import { singleProduct } from '../../types/singleProduct'
 import './ProductCard.scss'
+import { transformNumber } from '../../helper/transformNumber'
 
 type productCardType = {
     id: number,
@@ -30,8 +31,10 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
             </div>
             <div className="product__info">
                 <h4 className="product__title"></h4>
+                <h2>{title}</h2>
+
                 <p><b>Price:</b>{price}$</p>
-                <Stars fontSize='small' rate={rate} />
+                <Stars fontSize='small' rate={transformNumber(rate.toString())} />
                 <p><b>Category:</b> {category} </p>
                 <div className="buttons">
                     <button onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>

@@ -1,4 +1,4 @@
-function transformNumber(input: string): number {
+export function transformNumber(input: string): number {
     const [numberPart, decimalPart] = input.split('.');
     const number = parseFloat(numberPart);
 
