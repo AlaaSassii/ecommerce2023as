@@ -25,7 +25,9 @@ const UserCart = () => {
                     }
                 </div>
                 <div className='total__Shoping__cart'>
-
+                    <div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
         </Container>
