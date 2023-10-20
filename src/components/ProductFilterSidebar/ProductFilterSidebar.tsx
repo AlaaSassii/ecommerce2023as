@@ -5,7 +5,7 @@ import RateSelction from '../RateSelction'
 import SearchProductsInput from '../SearchProductsInput'
 import './ProductFilterSidebar.scss'
 const ProductFilterSidebar = () => {
-    const { addCategoryFilterFunction, categoryFilter, changeMaximumPriceFunction, changeMinimumPriceFunction, changeNameFilterFunction, changeRateFilterFunction, nameFilter, priceFilter, rateFilter, removeCategoryFilterFunction } = useProductFilter()
+    const { changeNameFilterFunction, nameFilter, } = useProductFilter()
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         changeNameFilterFunction(event.target.value)
     }
@@ -17,10 +17,10 @@ const ProductFilterSidebar = () => {
                 <p><b>Customize Your Product View</b> sidebar lets you fine-tune your product search. Easily customize your results by selecting filters that match your preferences.</p>
             </div>
             <div className='filters'>
+                <RateSelction />
                 <CategoriesSelction categories={["men's clothing", "jewelery", "electronics", "women's clothing"]} />
                 <SearchProductsInput handleChange={handleChange} value={nameFilter} />
                 <MultiRangeSlider />
-                <RateSelction />
                 {/*
                  */}
             </div>

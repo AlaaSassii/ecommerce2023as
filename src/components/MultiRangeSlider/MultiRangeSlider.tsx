@@ -54,8 +54,8 @@ const MultiRangeSlider = () => {
         <div className="multi__range__slider__container" >
             <input
                 type="range"
-                min={MIN}
-                max={MAX}
+                min={5}
+                max={700}
                 value={min}
                 onChange={handleMinInputRangeSlider}
                 className="thumb thumb--left"
@@ -63,8 +63,8 @@ const MultiRangeSlider = () => {
             />
             < input
                 type="range"
-                min={MIN}
-                max={MAX}
+                min={5}
+                max={700}
                 value={max}
                 onChange={handleMaxInputRangeSlider}
                 className="thumb thumb--right"
