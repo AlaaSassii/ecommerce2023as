@@ -9,6 +9,7 @@ const UserCart = () => {
         <div className='user__cart'>
             {
                 userCartProduct.map((p, index) => <UserProductCard
+                    product={p}
                     amount={p.amount}
                     description={p.description}
                     id={p.id}
