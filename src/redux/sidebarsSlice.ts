@@ -8,8 +8,8 @@ type initialStateType = {
 }
 
 const initialState: initialStateType = {
-    showFilterProductSidebar: sidebarProductsFilterEnum.hidden,
-    showUserProductsSideBar: sidebarUserProductsEnum.hidden
+    showFilterProductSidebar: sidebarProductsFilterEnum.hide,
+    showUserProductsSideBar: sidebarUserProductsEnum.hide
 }
 
 const sidebarsSlice = createSlice({
@@ -17,10 +17,13 @@ const sidebarsSlice = createSlice({
     initialState,
     reducers: {
         toggleFilterProductSidebar: (state) => {
-            return { ...state, showFilterProductSidebar: state.showFilterProductSidebar === sidebarProductsFilterEnum.hidden ? sidebarProductsFilterEnum.open : sidebarProductsFilterEnum.hidden };
+            return { ...state, showFilterProductSidebar: state.showFilterProductSidebar === sidebarProductsFilterEnum.hide ? sidebarProductsFilterEnum.open : sidebarProductsFilterEnum.hide };
         },
         toggleUserProductSidebar: (state) => {
-            return { ...state, showUserProductsSideBar: state.showUserProductsSideBar === sidebarUserProductsEnum.hidden ? sidebarUserProductsEnum.open : sidebarUserProductsEnum.hidden };
+            return { ...state, showUserProductsSideBar: state.showUserProductsSideBar === sidebarUserProductsEnum.hide ? sidebarUserProductsEnum.open : sidebarUserProductsEnum.hide };
+        },
+        hideOpenFilterProductSidebar: (state) => {
+            return { ...state, showFilterProductSidebar: sidebarProductsFilterEnum.hide };
         },
     }
 })

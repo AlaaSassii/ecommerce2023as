@@ -1,4 +1,4 @@
 export enum sidebarUserProductsEnum {
-    hidden,
+    hide,
     open
 }

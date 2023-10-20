@@ -1,4 +1,4 @@
 export enum sidebarProductsFilterEnum {
-    hidden,
+    hide,
     open
 }
