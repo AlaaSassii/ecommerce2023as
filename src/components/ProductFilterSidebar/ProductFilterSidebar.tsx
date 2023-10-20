@@ -21,7 +21,9 @@ const ProductFilterSidebar = () => {
                 <SearchProductsInput handleChange={handleChange} value={nameFilter} />
                 <p>Utilize a multi-range slider for precise price filtering of products.</p>
                 <MultiRangeSlider />
+                <p className='top__p'>Include a category button for streamlined product categorization and selection.</p>
                 <CategoriesSelction categories={["men's clothing", "jewelery", "electronics", "women's clothing"]} />
+                <p>Employ star ratings for efficient product evaluation and selection.</p>
                 <RateSelction />
                 {/*
                  */}
