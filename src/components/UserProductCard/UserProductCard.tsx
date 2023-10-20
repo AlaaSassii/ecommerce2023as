@@ -32,7 +32,7 @@ const UserProductCard: FC<UserProductCardType> = ({ product, amount, id, image, 
             <div className='info'>
                 <p><b>Product Title:</b>{title}</p>
                 <p><b>Product Price:</b>{price}$</p>
-                <p><b>Product description:</b>{description}$</p>
+                <p><b>Product description:</b>{description}</p>
                 <p><b>Starts:</b> <Stars fontSize='medium' rate={rate} /></p>
                 <div className='product__amount'>
                     <button onClick={() => decrementAmout(id)}><RiSubtractFill /></button>
