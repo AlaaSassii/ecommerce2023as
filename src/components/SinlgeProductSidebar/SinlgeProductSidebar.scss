@@ -1,5 +1,44 @@
 .product__slide{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    .product__slide__info{
+        flex: 1;
+        .title{
+            font-size: xx-small;
+        }
+        .product__amount{
+            margin-left: 10px;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            margin-top: 10px;
+            >div{
+                font-size: small;
+            }
+            >button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                border: none;
+                outline: none;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+                background-color: var(--blue-color);
+                transition: .3s;
+                &:hover{
+                background-color: var(--blue-color-hover);
+                font-size: small;
+                }
+
+            }
+        }
+    }
     img{
         height: 80px;
+        width: 60px;
     }
 }

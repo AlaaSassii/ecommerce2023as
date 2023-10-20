@@ -14,14 +14,19 @@ const ProductsSidebar = () => {
                 {
                     userCartProduct.length > 0
                         ?
-                        userCartProduct.map(product =>
-                            <SinlgeProductSidebar
-                                amount={product.amount}
-                                id={product.id}
-                                image={product.image}
-                                title={product.title}
-                                key={`product__${product.id}`}
-                            />)
+                        <>
+                            {
+                                userCartProduct.map(product =>
+                                    <SinlgeProductSidebar
+                                        amount={product.amount}
+                                        id={product.id}
+                                        image={product.image}
+                                        title={product.title}
+                                        key={`product__${product.id}`}
+                                    />)
+                            }
+                            <div className='view__Cart'><button>View your Cart</button></div>
+                        </>
                         :
                         <div className='empty'>
                             <h3>there is no user product</h3>

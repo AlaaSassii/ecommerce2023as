@@ -18,7 +18,7 @@ const SinlgeProductSidebar: FC<SinlgeProductSidebarType> = ({ id, image, title, 
 
     return (
         <div className='product__slide'>
-            <button onClick={() => deleteProduct(id)}><AiOutlineClose /></button>
+            {/* <button onClick={() => deleteProduct(id)}><AiOutlineClose /></button> */}
             <div className='image'>
                 <img src={image} alt="" />
             </div>
