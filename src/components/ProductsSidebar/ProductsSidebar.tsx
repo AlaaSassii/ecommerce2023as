@@ -3,10 +3,12 @@ import SinlgeProductSidebar from '../SinlgeProductSidebar'
 import noProductFound from '../../assets/no-products-found.png'
 import { IoCloseSharp } from 'react-icons/io5'
 import './ProductsSidebar.scss'
+import { useNavigate } from 'react-router-dom'
 
 
 const ProductsSidebar = () => {
     const { userCartProduct } = useAppSelector(state => state.userCart)
+    let navigate = useNavigate()
     return (
         <div className='product__sidebar'>
             <button className='close__sidebar__btn'><IoCloseSharp /></button>
@@ -25,7 +27,7 @@ const ProductsSidebar = () => {
                                         key={`product__${product.id}`}
                                     />)
                             }
-                            <div className='view__Cart'><button>View your Cart</button></div>
+                            <div className='view__Cart'><button onClick={() => navigate('/user-product-cart')}>View your Cart</button></div>
                         </>
                         :
                         <div className='empty'>
