@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import './UserProduct.scss'
+import './UserProductCard.scss'
 import { FiPlus } from 'react-icons/fi';
 import { RiSubtractFill } from 'react-icons/ri'
 import Stars from '../Stars'
