@@ -1,10 +1,11 @@
 import { FC } from 'react'
 import Stars from '../Stars'
-import './ProductCard.scss'
 import { AiFillHeart } from 'react-icons/ai'
 import { useAppSelector } from '../../hooks/useAppSelector'
 import { useProductActions } from '../../hooks/useProductActions'
 import { singleProduct } from '../../types/singleProduct'
+import './ProductCard.scss'
+
 type productCardType = {
     id: number,
     image: string,
