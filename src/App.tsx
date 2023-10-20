@@ -5,9 +5,11 @@ import ProductsInfo from './routes/ProductsInfo'
 import UserCart from './routes/UserCart'
 import Contact from './routes/Contact'
 import Error from './routes/Error'
+import Navbar from './components/Navbar'
 const App = () => {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
