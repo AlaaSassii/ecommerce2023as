@@ -8,10 +8,10 @@ type ErrorNoProductType = {
 
 const ErrorNoProduct: FC<ErrorNoProductType> = ({ left }) => {
     return (
-        <div style={left ? { left } : {}} className='error__no__product'>
+        <div style={left ? { left: `${left}%` } : {}} className='error__no__product' >
             <h3>there is no product</h3>
             <img src={noProductFound} alt="" />
-        </div>
+        </div >
     )
 }
 

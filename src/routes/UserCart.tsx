@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { useAppSelector } from '../hooks/useAppSelector'
 import UserProductCard from '../components/UserProductCard'
 import { Container } from '@mui/material';
-import '../scss/UserCart.scss'
 import { calculateTotalAmount } from '../helper/calculateTotalAmount';
 import { calculateTotalPrice } from '../helper/calculateTotalPrice';
 import { formatNumber } from '../helper/formatNumber';
 import ErrorNoProduct from '../components/ErrorNoProduct';
+import '../scss/UserCart.scss'
 
 const UserCart = () => {
     const { userCartProduct } = useAppSelector(state => state.userCart)
+    const [left, setLeft] = useState(25)
     return (
         <Container>
             <div className='user__cart__container'>
@@ -28,7 +30,7 @@ const UserCart = () => {
                                 key={`${index}__product_user_cart`}
                             />)
                             :
-                            <ErrorNoProduct />
+                            <ErrorNoProduct left={left} />
 
                     }
                 </div>
