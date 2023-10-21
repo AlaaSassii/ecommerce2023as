@@ -5,7 +5,7 @@ import noProductFound from '../../assets/no-products-found.png'
 const ErrorNoProduct = () => {
     return (
         <div>
-            <h3>there is no user product</h3>
+            <h3>there is no product</h3>
             <img src={noProductFound} alt="" />
         </div>
     )

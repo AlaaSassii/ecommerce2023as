@@ -2,6 +2,7 @@ import { FC } from 'react'
 import './ProductsCategories.scss'
 import { useGetProductsByCategory } from '../../hooks/useGetProdcutsByCategory'
 import ProductCard from '../ProductCard'
+import LoadingSpinner from '../LoadingSpinner'
 type productsCategoriesType = {
     category: string,
     id: number
@@ -17,7 +18,7 @@ const ProductsCategories: FC<productsCategoriesType> = ({ category, id }) => {
                     :
                     (loading)
                         ?
-                        <h1>loading</h1>
+                        <LoadingSpinner />
                         :
                         <div className='products__categories'>
                             <h1>Other Products With The Same Category</h1>

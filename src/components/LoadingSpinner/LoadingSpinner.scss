@@ -4,7 +4,6 @@
     border: 2px solid #d3d3d3;
     border-top: 3px solid var(--main-color);
     border-radius: 100%;
-    margin: 4% auto;
     animation: spin 1s infinite linear;
 }
 
@@ -15,4 +14,9 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.loading__spinner{
+    display: block;
+    margin: auto;
 }

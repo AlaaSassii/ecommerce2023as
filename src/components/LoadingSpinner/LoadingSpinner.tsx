@@ -19,7 +19,7 @@ const LoadingSpinner: FC<LoadingSpinnerProps> = ({
     height,
 }) => {
     const customSpinnerColor = {
-        borderTopColor: color || "#57A639",
+        borderTopColor: color || "#7300ff",
         marginLeft: marginLeft || "auto",
         marginRight: marginRight || "auto",
         width: width || "3rem",
@@ -27,7 +27,7 @@ const LoadingSpinner: FC<LoadingSpinnerProps> = ({
         backgroundColor: bgColor || "transparent",
     };
 
-    return <div id="loading" className="display" style={customSpinnerColor}></div>;
+    return <div className='loading__spinner'><div id="loading" className="display" style={customSpinnerColor}></div></div>;
 };
 
 export default LoadingSpinner

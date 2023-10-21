@@ -1,5 +1,6 @@
 import Container from "../components/Container"
 import ErrorNoProduct from "../components/ErrorNoProduct"
+import LoadingSpinner from "../components/LoadingSpinner"
 import ProductCard from "../components/ProductCard"
 import ProductFilterSidebar from "../components/ProductFilterSidebar/ProductFilterSidebar"
 import { transformNumber } from "../helper/transformNumber"
@@ -26,7 +27,7 @@ const Products = ({ }) => {
                             :
                             (loading || !filteredProducts)
                                 ?
-                                <h1>Loading...</h1>
+                                <LoadingSpinner />
                                 :
                                 filteredProducts.length
                                     ?
