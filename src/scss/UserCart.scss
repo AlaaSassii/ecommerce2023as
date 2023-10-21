@@ -1,6 +1,7 @@
 .user__cart__container{
     padding-right: 350px;
     position: relative;
+    margin-top: 90px;
     @media(max-width:991px){
         padding-right: 0;
         display: flex;
@@ -14,7 +15,7 @@
 .total__Shoping__cart{
     @media(min-width: 991px){
         position: fixed;
-        top: 50px;
+        top: 90px;
         right: 80px;
         width: 340px;
     }
@@ -22,6 +23,7 @@
     @media(max-width: 991px){
             position: relative;
             width: 100%;
+            margin-top: 80px;
     }
     background-color: white;
     padding-bottom: 30px;
