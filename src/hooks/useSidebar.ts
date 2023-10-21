@@ -6,10 +6,10 @@ export const useSideBar = () => {
     const dispatch = useDispatch();
     const { showUserProductsSideBar, showFilterProductSidebar } = useAppSelector(state => state.sidebars);
     const toggleFilterProductSidebarFunction = () => {
-        dispatch(toggleFilterProductSidebar)
+        dispatch(toggleFilterProductSidebar())
     }
     const toggleUserProductSidebarFunction = () => {
-        dispatch(toggleUserProductSidebar)
+        dispatch(toggleUserProductSidebar())
     }
     return { showUserProductsSideBar, showFilterProductSidebar, toggleFilterProductSidebarFunction, toggleUserProductSidebarFunction }
 

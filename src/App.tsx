@@ -8,7 +8,12 @@ import Error from './routes/Error'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ProductsSidebar from './components/ProductsSidebar'
+import { useSideBar } from './hooks/useSidebar'
+import { sidebarUserProductsEnum } from './enum/sidebarUserProducts'
 const App = () => {
+  const { showUserProductsSideBar, } = useSideBar()
+  console.log({ showUserProductsSideBar });
+
   return (
     <>
       <Navbar />
@@ -20,8 +25,8 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='*' element={<Error />} />
       </Routes>
+      {showUserProductsSideBar ? <ProductsSidebar /> : null}
       <Footer />
-      {/* <ProductsSidebar /> */}
     </>
   )
 }
