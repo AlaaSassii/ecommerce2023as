@@ -4,4 +4,8 @@
     grid-gap: 10px; 
     padding-left: 200px;
     transform: .3s;
+    @media(max-width:991px){
+      padding-left: 0;
+
+    }
   }

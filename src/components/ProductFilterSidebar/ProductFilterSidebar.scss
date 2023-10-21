@@ -52,10 +52,11 @@
     cursor: pointer;
     font-weight: thin;
     padding-left: 5px;
+    display: none;
 }
 @media(max-width:991px){
     .toggle__btn{
-     
+    display: block;
     
     }
 }
