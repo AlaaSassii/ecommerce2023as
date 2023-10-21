@@ -46,14 +46,17 @@ header{
         position: relative;
         >div{
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 25px;
-            height: 25px;
+            top:-5px;
+            right: -5px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: var(--red-color);
+            color: white;
+            font-size: xx-small;
         }
        }    
     }
