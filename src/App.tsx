@@ -6,10 +6,8 @@ import UserCart from './routes/UserCart'
 import Contact from './routes/Contact'
 import Error from './routes/Error'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 import ProductsSidebar from './components/ProductsSidebar'
 import { useSideBar } from './hooks/useSidebar'
-import { sidebarUserProductsEnum } from './enum/sidebarUserProducts'
 const App = () => {
   const { showUserProductsSideBar, } = useSideBar()
   console.log({ showUserProductsSideBar });
@@ -26,7 +24,6 @@ const App = () => {
         <Route path='*' element={<Error />} />
       </Routes>
       <ProductsSidebar />
-      <Footer />
     </>
   )
 }

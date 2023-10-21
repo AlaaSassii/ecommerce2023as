@@ -11,6 +11,7 @@
     border-radius: 4px;
     border: solid 1px var(--gray-color);
     overflow: auto;
+    z-index: 1000;
     transition: .3s;
     .product__sidebar__container{
     padding-top: 60px;
