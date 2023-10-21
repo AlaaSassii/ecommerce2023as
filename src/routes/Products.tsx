@@ -1,4 +1,5 @@
 import Container from "../components/Container"
+import ErrorNoProduct from "../components/ErrorNoProduct"
 import ProductCard from "../components/ProductCard"
 import ProductFilterSidebar from "../components/ProductFilterSidebar/ProductFilterSidebar"
 import { transformNumber } from "../helper/transformNumber"
@@ -27,19 +28,23 @@ const Products = ({ }) => {
                                 ?
                                 <h1>Loading...</h1>
                                 :
-                                filteredProducts
-                                    .map((p) =>
-                                        <ProductCard
-                                            category={p.category}
-                                            id={p.id}
-                                            image={p.image}
-                                            price={p.price}
-                                            product={p}
-                                            rate={p.rating.rate}
-                                            rateCount={p.rating.count}
-                                            title={p.title}
-                                            key={`product__${p.id}`}
-                                        />)
+                                filteredProducts.length
+                                    ?
+                                    filteredProducts
+                                        .map((p) =>
+                                            <ProductCard
+                                                category={p.category}
+                                                id={p.id}
+                                                image={p.image}
+                                                price={p.price}
+                                                product={p}
+                                                rate={p.rating.rate}
+                                                rateCount={p.rating.count}
+                                                title={p.title}
+                                                key={`product__${p.id}`}
+                                            />)
+                                    :
+                                    <ErrorNoProduct />
 
                     }
                 </div>

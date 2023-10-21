@@ -5,6 +5,7 @@ import '../scss/UserCart.scss'
 import { calculateTotalAmount } from '../helper/calculateTotalAmount';
 import { calculateTotalPrice } from '../helper/calculateTotalPrice';
 import { formatNumber } from '../helper/formatNumber';
+import ErrorNoProduct from '../components/ErrorNoProduct';
 
 const UserCart = () => {
     const { userCartProduct } = useAppSelector(state => state.userCart)
@@ -13,17 +14,21 @@ const UserCart = () => {
             <div className='user__cart__container'>
                 <div className='user__cart'>
                     {
-                        userCartProduct.map((p, index) => <UserProductCard
-                            product={p}
-                            amount={p.amount}
-                            description={p.description}
-                            id={p.id}
-                            image={p.image}
-                            price={p.price}
-                            rate={p.rating.rate}
-                            title={p.title}
-                            key={`${index}__product_user_cart`}
-                        />)
+                        userCartProduct.length
+                            ?
+                            userCartProduct.map((p, index) => <UserProductCard
+                                product={p}
+                                amount={p.amount}
+                                description={p.description}
+                                id={p.id}
+                                image={p.image}
+                                price={p.price}
+                                rate={p.rating.rate}
+                                title={p.title}
+                                key={`${index}__product_user_cart`}
+                            />)
+                            :
+                            <ErrorNoProduct />
 
                     }
                 </div>
