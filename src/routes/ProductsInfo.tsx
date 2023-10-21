@@ -24,7 +24,7 @@ const ProductsInfo = () => {
                         {
                             (loading || !product)
                                 ?
-                                <LoadingSpinner />
+                                <LoadingSpinner absolute={true} />
                                 :
                                 <>
                                     <ProductInfo

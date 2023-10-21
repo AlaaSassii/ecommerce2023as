@@ -8,6 +8,10 @@ type LoadingSpinnerProps = {
     marginRight?: string;
     width?: string;
     height?: string;
+    translateX?: number,
+    translateY?: number,
+    absolute?: boolean
+
 };
 
 const LoadingSpinner: FC<LoadingSpinnerProps> = ({
@@ -17,6 +21,9 @@ const LoadingSpinner: FC<LoadingSpinnerProps> = ({
     marginRight,
     width,
     height,
+    translateX,
+    translateY,
+    absolute
 }) => {
     const customSpinnerColor = {
         borderTopColor: color || "#7300ff",
@@ -27,7 +34,7 @@ const LoadingSpinner: FC<LoadingSpinnerProps> = ({
         backgroundColor: bgColor || "transparent",
     };
 
-    return <div className='loading__spinner'><div id="loading" className="display" style={customSpinnerColor}></div></div>;
+    return <div style={{ transform: `translate(${(translateX || 0)}px, ${translateY || 0}px)` }} className={absolute ? 'loading__spinner' : ''}><div id="loading" className="display" style={customSpinnerColor}></div></div>;
 };
 
 export default LoadingSpinner

@@ -18,7 +18,7 @@ const ProductsCategories: FC<productsCategoriesType> = ({ category, id }) => {
                     :
                     (loading)
                         ?
-                        <LoadingSpinner />
+                        <LoadingSpinner translateY={100} />
                         :
                         <div className='products__categories'>
                             <h1>Other Products With The Same Category</h1>

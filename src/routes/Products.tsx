@@ -27,7 +27,7 @@ const Products = ({ }) => {
                             :
                             (loading || !filteredProducts)
                                 ?
-                                <LoadingSpinner />
+                                <LoadingSpinner absolute={true} translateX={40} />
                                 :
                                 filteredProducts.length
                                     ?
