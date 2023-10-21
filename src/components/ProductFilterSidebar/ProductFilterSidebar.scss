@@ -33,3 +33,27 @@
     }
    
 }
+.toggle__btn{
+    display: none;
+}
+@media(max-width:991px){
+    .toggle__btn{
+        position: absolute;
+        top:50% ;
+        right: -15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        background-color: white;
+        border: solid 1px var(--gray-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: thin;
+        padding-left: 5px;
+    
+    }
+}
