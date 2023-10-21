@@ -25,7 +25,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='*' element={<Error />} />
       </Routes>
-      {showUserProductsSideBar ? <ProductsSidebar /> : null}
+      <ProductsSidebar />
       <Footer />
     </>
   )

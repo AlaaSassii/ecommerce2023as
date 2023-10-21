@@ -9,10 +9,10 @@ import { useSideBar } from '../../hooks/useSidebar'
 
 const ProductsSidebar = () => {
     const { userCartProduct } = useAppSelector(state => state.userCart);
-    const { toggleUserProductSidebarFunction } = useSideBar()
+    const { toggleUserProductSidebarFunction, showUserProductsSideBar } = useSideBar()
     let navigate = useNavigate()
     return (
-        <div className='product__sidebar'>
+        <div className={`product__sidebar ${showUserProductsSideBar ? '' : 'hide__product__sidebar'}`}>
             <button className='close__sidebar__btn' onClick={() => toggleUserProductSidebarFunction()}><IoCloseSharp /></button>
             <div className='product__sidebar__container'>
                 {
