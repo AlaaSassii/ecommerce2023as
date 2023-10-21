@@ -29,7 +29,7 @@ const ProductsSidebar = () => {
                                         key={`product__${product.id}`}
                                     />)
                             }
-                            <div className='view__Cart'><button onClick={() => navigate('/user-product-cart')}>View your Cart</button></div>
+                            <div className={`view__Cart ${showUserProductsSideBar ? '' : 'hide__view__Cart'}`}><button onClick={() => navigate('/user-product-cart')}>View your Cart</button></div>
                         </>
                         :
                         <div className='empty'>

@@ -23,6 +23,7 @@
         width: 255px;
         height: 35px;
         background-color: white;
+        transition: .3s;
         button{
             display: block;
             margin: auto;
@@ -40,6 +41,9 @@
 
             }
         }
+    }
+    .hide__view__Cart{
+        right: -270px;
     }
     .empty{
         text-align: center;
@@ -62,4 +66,7 @@
 .hide__product__sidebar{
     right: -270px;
 
+}
+.hide__view__Cart{
+    right: -270px;
 }

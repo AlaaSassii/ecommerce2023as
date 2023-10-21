@@ -45,7 +45,7 @@ const Products = ({ }) => {
                                                 key={`product__${p.id}`}
                                             />)
                                     :
-                                    <ErrorNoProduct />
+                                    <ErrorNoProduct top={40} />
 
                     }
                 </div>

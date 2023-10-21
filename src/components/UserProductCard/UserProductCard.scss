@@ -55,7 +55,11 @@
             outline: transparent;
             color: white;
             transition: 0.3s;
+            @media(max-width:798px){
+                font-size: x-small;
+            }
         }
+       
     }
     .view__moew__btn{
         background-color: var(--green-color);
