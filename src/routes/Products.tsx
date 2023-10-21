@@ -7,7 +7,7 @@ import { transformNumber } from "../helper/transformNumber"
 import useGetAllProducts from "../hooks/useGetAllProducts"
 import { useProductFilter } from "../hooks/useProductFilter"
 import '../scss/Products.scss'
-const Products = ({ }) => {
+const Products = () => {
     const { products, loading, error, } = useGetAllProducts()
     const { nameFilter, priceFilter, rateFilter, categoryFilter } = useProductFilter()
     const filteredProducts = products
