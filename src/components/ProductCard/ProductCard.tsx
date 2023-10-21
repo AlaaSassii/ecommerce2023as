@@ -36,6 +36,7 @@ const ProductCard: FC<productCardType> = ({ id, image, rate, title, price, rateC
                 <p><b>Price: </b>{price}$</p>
                 <p><b>Category:</b> {category} </p>
                 <Stars fontSize='small' rate={transformNumber(rate.toString())} />
+                {/* <p>{rate}</p> */}
                 <div className="buttons">
                     <button className='add_to_cart__btn' onClick={() => { productInCart ? deleteProduct(id) : getProduct(product) }}>
                         {productInCart ? "Remove from Cart" : "Add to Cart"}

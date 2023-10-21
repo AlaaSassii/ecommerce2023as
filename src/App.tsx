@@ -4,10 +4,10 @@ import Products from './routes/Products'
 import ProductsInfo from './routes/ProductsInfo'
 import UserCart from './routes/UserCart'
 import Contact from './routes/Contact'
-import Error from './routes/Error'
 import Navbar from './components/Navbar'
 import ProductsSidebar from './components/ProductsSidebar'
 import { useSideBar } from './hooks/useSidebar'
+import ErrorPage from './routes/ErrorPage'
 const App = () => {
   const { showUserProductsSideBar, } = useSideBar()
   console.log({ showUserProductsSideBar });
@@ -21,7 +21,7 @@ const App = () => {
         <Route path='/products/:id' element={<ProductsInfo />} />
         <Route path='/user-product-cart' element={<UserCart />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='*' element={<Error />} />
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
       <ProductsSidebar />
     </>

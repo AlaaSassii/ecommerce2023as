@@ -1,15 +1,15 @@
 export function generateStarArray(rating: number): string[] {
-    const starArray: string[] = [];
+    const ratingArray: string[] = [];
 
-    for (let i = 1; i <= 5; i++) {
-        if (i <= rating) {
-            starArray.push("S"); // Full star
-        } else if (i - rating < 0.5) {
-            starArray.push("H"); // Half star
+    for (let i = 0; i < 5; i++) {
+        if (rating >= i + 1) {
+            ratingArray.push("S");
+        } else if (rating >= i + 0.5) {
+            ratingArray.push("H");
         } else {
-            starArray.push("E"); // Empty star
+            ratingArray.push("E");
         }
     }
 
-    return starArray;
+    return ratingArray;
 }

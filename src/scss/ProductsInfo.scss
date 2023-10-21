@@ -3,6 +3,7 @@
     align-items: flex-start;
     position: relative;
     gap: 10px;
+    top: 74px;
     @media(max-width:991px){
         flex-direction: column;
     }

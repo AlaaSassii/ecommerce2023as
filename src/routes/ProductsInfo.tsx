@@ -22,26 +22,30 @@ const ProductsInfo = () => {
                     :
                     <div className='productinfo__view'>
                         {
-                            (loading || !product)
+                            !product
                                 ?
-                                <LoadingSpinner absolute={true} />
+                                <ErrorNoProduct x={-50} y={20} />
                                 :
-                                <>
-                                    <ProductInfo
-                                        product={product}
-                                        category={product.category}
-                                        description={product.description}
-                                        id={product.id}
-                                        image={product.image}
-                                        price={product.price}
-                                        rate={product.rating.rate}
-                                        title={product.title}
-                                    />
-                                    <ProductsCategories
-                                        category={product.category}
-                                        id={product.id}
-                                    />
-                                </>
+                                loading
+                                    ?
+                                    <LoadingSpinner absolute={true} />
+                                    :
+                                    <>
+                                        <ProductInfo
+                                            product={product}
+                                            category={product.category}
+                                            description={product.description}
+                                            id={product.id}
+                                            image={product.image}
+                                            price={product.price}
+                                            rate={product.rating.rate}
+                                            title={product.title}
+                                        />
+                                        <ProductsCategories
+                                            category={product.category}
+                                            id={product.id}
+                                        />
+                                    </>
                         }
                     </div>
             }
