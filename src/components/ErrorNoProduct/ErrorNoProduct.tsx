@@ -13,7 +13,7 @@ const ErrorNoProduct: FC<ErrorNoProductType> = ({ left, top, x, y }) => {
     const cutomErrorProductStyle = {
         left: left || '50%',
         top: top || '50%',
-        transform: `translate(${x || 0}, ${y || 0})`
+        transform: `translate(${x || 0}%, ${y || 0}%)`
     };
     return (
         <div style={cutomErrorProductStyle} className='error__no__product' >

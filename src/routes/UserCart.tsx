@@ -10,7 +10,6 @@ import '../scss/UserCart.scss'
 
 const UserCart = () => {
     const { userCartProduct } = useAppSelector(state => state.userCart)
-    const [left, setLeft] = useState(25)
     return (
         <Container>
             <div className='user__cart__container'>
@@ -50,7 +49,7 @@ const UserCart = () => {
                             </div>
                         </>
                         :
-                        <ErrorNoProduct left={left} />
+                        <ErrorNoProduct x={-50} y={20} />
                 }
             </div>
         </Container>
