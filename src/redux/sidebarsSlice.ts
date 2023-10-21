@@ -8,7 +8,7 @@ type initialStateType = {
 }
 
 const initialState: initialStateType = {
-    showFilterProductSidebar: sidebarProductsFilterEnum.hide,
+    showFilterProductSidebar: sidebarProductsFilterEnum.open,
     showUserProductsSideBar: sidebarUserProductsEnum.hide
 }
 

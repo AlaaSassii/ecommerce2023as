@@ -5,15 +5,16 @@ import RateSelction from '../RateSelction'
 import SearchProductsInput from '../SearchProductsInput'
 import { IoIosArrowForward } from 'react-icons/io'
 import './ProductFilterSidebar.scss'
+import { useSideBar } from '../../hooks/useSidebar'
 const ProductFilterSidebar = () => {
     const { changeNameFilterFunction, nameFilter, } = useProductFilter()
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         changeNameFilterFunction(event.target.value)
     }
-
+    const { showFilterProductSidebar, toggleFilterProductSidebarFunction } = useSideBar()
     return (
-        <div className='product__filter_Sidebar'>
-            <button className='toggle__btn'><IoIosArrowForward /></button>
+        <div className={`product__filter_Sidebar ${showFilterProductSidebar ? '' : 'hide__product__filter'}`}>
+            <button className='toggle__btn' onClick={() => toggleFilterProductSidebarFunction()}><IoIosArrowForward /></button>
             <div className="sidebar__info">
                 <h1 className="title">Customize Your Product View</h1>
                 <p><b>Customize Your Product View</b> sidebar lets you fine-tune your product search. Easily customize your results by selecting filters that match your preferences.</p>
