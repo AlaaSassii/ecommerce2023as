@@ -13,3 +13,4 @@ export function generateStarArray(rating: number): string[] {
 
     return ratingArray;
 }
+// done
