@@ -7,10 +7,10 @@ import { BsPerson } from 'react-icons/bs'
 import Logo from '../../assets/Logo.png'
 import Container from '../Container'
 import { useAppSelector } from '../../hooks/useAppSelector'
+import { calculateTotalAmount } from '../../helper/calculateTotalAmount'
 const Navbar = () => {
     const { toggleUserProductSidebarFunction } = useSideBar()
     const { userCartProduct } = useAppSelector(state => state.userCart)
-    const userCartProductNumber = userCartProduct.length
     return (
         <nav>
             <Container>
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <div className="buttons">
                         <button><BsPerson /></button>
                         <button><AiFillHeart /></button>
-                        <button onClick={() => toggleUserProductSidebarFunction()}><FiShoppingCart /> <div>{userCartProductNumber > 9 ? "9 +" : userCartProductNumber}</div></button>
+                        <button onClick={() => toggleUserProductSidebarFunction()}><FiShoppingCart /> <div>{calculateTotalAmount(userCartProduct) > 9 ? "9+" : calculateTotalAmount(userCartProduct)}</div></button>
                     </div>
                 </header>
             </Container>
