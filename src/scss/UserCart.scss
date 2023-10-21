@@ -1,14 +1,26 @@
-
 .user__cart__container{
     padding-right: 350px;
     position: relative;
+    @media(max-width:991px){
+        padding-right: 0;
+        display: flex;
+        flex-direction: column-reverse;
+       
+    }
     
 }
 .total__Shoping__cart{
-    position: fixed;
-    top: 50px;
-    right: 80px;
-    width: 340px;
+    @media(min-width: 991px){
+        position: fixed;
+        top: 50px;
+        right: 80px;
+        width: 340px;
+    }
+  
+    @media(max-width: 991px){
+            position: relative;
+            width: 100%;
+    }
     background-color: white;
     padding-bottom: 30px;
     border-radius: 4px;
