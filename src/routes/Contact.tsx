@@ -20,8 +20,8 @@ const Contact = () => {
     return (
         <div className="container contact__container ">
             <div className="text">
-                <h1>Get in Touch with Us for All Your Meal and Recipe Queries</h1>
-                <p>If you have any questions, suggestions, or simply want to connect with us about all things meals and recipes, we're here to listen. Our team of culinary enthusiasts is eager to assist you in your culinary journey. Whether you're seeking expert advice, looking for specific recipes, or need assistance with any meal-related queries, we've got you covered. Your feedback and inquiries are invaluable to us, and we can't wait to help you explore the wonderful world of flavors and delicious cuisine. Reach out to us, and let's embark on this flavorful adventure together.</p>
+                <h1>Customer Support & Contact Information</h1>
+                <p>we value your input and questions. Our customer support team is here to assist you with any inquiries or concerns. Whether it's about products, orders, or feedback, we're just a message away. Reach out to us, and we'll ensure your online shopping experience is nothing short of exceptional.</p>
             </div>
             <form className='contact__form ' onSubmit={handleSubmit}>
                 <div className="user_data">
