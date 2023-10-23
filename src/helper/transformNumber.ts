@@ -1,5 +1,5 @@
 export function transformNumber(input: string): number {
-    const [numberPart, decimalPart] = input.split('.');
+    const [numberPart] = input.split('.');
     const number = parseFloat(numberPart);
 
     if (number >= 0.6 && number <= 0.9) {

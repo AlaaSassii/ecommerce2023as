@@ -10,6 +10,7 @@ const RateSelction = () => {
                 defaultValue={rateFilter || 0}
                 precision={0.5}
                 onChange={(event, newValue) => {
+                    console.log(event)
                     changeRateFilterFunction(newValue || 0);
                 }}
             />

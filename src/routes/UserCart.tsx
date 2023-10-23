@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useAppSelector } from '../hooks/useAppSelector'
 import UserProductCard from '../components/UserProductCard'
 import { Container } from '@mui/material';

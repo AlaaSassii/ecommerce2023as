@@ -4,7 +4,6 @@ import { useProductActions } from '../../hooks/useProductActions';
 
 import { FiPlus } from 'react-icons/fi';
 import { RiSubtractFill } from 'react-icons/ri'
-import { AiOutlineClose } from 'react-icons/ai'
 import './SinlgeProductSidebar.scss'
 
 type SinlgeProductSidebarType = {
@@ -14,7 +13,7 @@ type SinlgeProductSidebarType = {
     id: number
 }
 const SinlgeProductSidebar: FC<SinlgeProductSidebarType> = ({ id, image, title, amount }) => {
-    const { decrementAmout, deleteProduct, incrementAmout } = useProductActions()
+    const { decrementAmout, incrementAmout } = useProductActions()
 
     return (
         <div className='product__slide'>

@@ -6,7 +6,7 @@ import { useProductFilter } from "../../hooks/useProductFilter";
 const MultiRangeSlider = () => {
     const { priceFilter: { min, max }, changeMaximumPriceFunction, changeMinimumPriceFunction } = useProductFilter()
     const [MAX, SETMAX] = useState(0);
-    const [MIN, SETMIN] = useState(0);
+    const [, SETMIN] = useState(0);
     const minValRef = useRef<number>(min);
     const maxValRef = useRef<number>(max);
     const range = useRef<HTMLDivElement | null>(null);

@@ -6,12 +6,9 @@ import UserCart from './routes/UserCart'
 import Contact from './routes/Contact'
 import Navbar from './components/Navbar'
 import ProductsSidebar from './components/ProductsSidebar'
-import { useSideBar } from './hooks/useSidebar'
 import ErrorPage from './routes/ErrorPage'
 const App = () => {
-  const { showUserProductsSideBar, } = useSideBar()
-  console.log({ showUserProductsSideBar });
-
+  console.log = () => { }
   return (
     <>
       <Navbar />
